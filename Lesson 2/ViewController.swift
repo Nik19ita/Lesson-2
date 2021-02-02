@@ -12,6 +12,12 @@ class ViewController: UIViewController {
     @IBOutlet var segmentedControll: UISegmentedControl!
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var slider: UISlider!
+    @IBOutlet var textField: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var mainButton: UIButton!
+    @IBOutlet var mainSwitch: NSLayoutConstraint!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +33,7 @@ class ViewController: UIViewController {
         
         
         
-        //MARK: slider
+        //MARK: Slider
         
         slider.value = 1
         slider.minimumValue = 1
@@ -35,6 +41,19 @@ class ViewController: UIViewController {
         slider.minimumTrackTintColor = .yellow
         slider.maximumTrackTintColor = .blue
         slider.thumbTintColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        
+        // MARK: textField
+        
+        
+        
+        //MARK: mainButton
+        
+        mainButton.layer.cornerRadius = 10
+    
+        
+       
+        
     }
 
 
@@ -59,5 +78,12 @@ class ViewController: UIViewController {
         }
     
     }
+    @IBAction func sliderAction(_ sender: Any) {
+        mainLabel.text =  String(Int(slider.value))
+    }
+    
+    
+    
+    
 }
 
