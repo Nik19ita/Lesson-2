@@ -22,29 +22,43 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="actionSegmentedControll:" destination="BYZ-38-t0r" eventType="valueChanged" id="EnJ-X2-Kif"/>
+                                </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-N3-qO4">
-                                <rect key="frame" x="16" y="147" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-N3-qO4">
+                                <rect key="frame" x="16" y="63" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HqP-dJ-Odc">
+                                <rect key="frame" x="14" y="99.5" width="347" height="31"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sph-Hk-vpd" secondAttribute="trailing" constant="16" id="8xB-33-t9G"/>
-                            <constraint firstItem="Rie-N3-qO4" firstAttribute="top" secondItem="Sph-Hk-vpd" secondAttribute="bottom" constant="100" id="R33-Sa-cwq"/>
+                            <constraint firstItem="HqP-dJ-Odc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MRk-si-pFd"/>
+                            <constraint firstItem="Rie-N3-qO4" firstAttribute="top" secondItem="Sph-Hk-vpd" secondAttribute="bottom" constant="16" id="R33-Sa-cwq"/>
                             <constraint firstItem="Rie-N3-qO4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Rcd-M6-1Vs"/>
                             <constraint firstItem="Sph-Hk-vpd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Tg1-8f-gRW"/>
                             <constraint firstItem="Sph-Hk-vpd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="a1I-xV-MPz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HqP-dJ-Odc" secondAttribute="trailing" constant="16" id="x1C-Y9-bOU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rie-N3-qO4" secondAttribute="trailing" constant="16" id="xAh-Kz-dxC"/>
+                            <constraint firstItem="HqP-dJ-Odc" firstAttribute="top" secondItem="Rie-N3-qO4" secondAttribute="bottom" constant="16" id="zR0-Nx-FLQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="Rie-N3-qO4" id="6cW-pk-M0B"/>
+                        <outlet property="segmentedControll" destination="Sph-Hk-vpd" id="qxg-Lk-tsa"/>
+                        <outlet property="slider" destination="HqP-dJ-Odc" id="HIZ-r5-uIV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-799" y="99"/>
+            <point key="canvasLocation" x="39" y="72"/>
         </scene>
     </scenes>
     <resources>
