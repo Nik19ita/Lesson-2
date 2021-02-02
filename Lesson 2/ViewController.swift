@@ -13,9 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var slider: UISlider!
     @IBOutlet var textField: UITextField!
-    @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var mainButton: UIButton!
-    @IBOutlet var mainSwitch: NSLayoutConstraint!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var mainSwitch: UISwitch!
+    
     
     
     
@@ -30,29 +31,23 @@ class ViewController: UIViewController {
         mainLabel.font = mainLabel.font.withSize(30)
         mainLabel.textAlignment = .center
         mainLabel.numberOfLines = 2
+                
+    //MARK: Slider
         
+    slider.value = 1
+    slider.minimumValue = 1
+    slider.maximumValue = 100
+    slider.minimumTrackTintColor = .yellow
+    slider.maximumTrackTintColor = .blue
+    slider.thumbTintColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
         
+    // MARK: textField
+    textField.backgroundColor = .white
         
-        //MARK: Slider
+    //MARK: mainButton
         
-        slider.value = 1
-        slider.minimumValue = 1
-        slider.maximumValue = 100
-        slider.minimumTrackTintColor = .yellow
-        slider.maximumTrackTintColor = .blue
-        slider.thumbTintColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
-        
-        
-        // MARK: textField
-        
-        
-        
-        //MARK: mainButton
-        
-        mainButton.layer.cornerRadius = 10
-    
-        
-       
+    mainButton.layer.cornerRadius = 10
+    mainButton.setTitle("Готово", for: .normal )
         
     }
 
@@ -83,7 +78,36 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func makeButtonAction(_ sender: Any) {
+        guard let  text = textField.text, !text.isEmpty else { return}
+            mainLabel.text = text
+        }
     
     
-}
+    @IBAction func datePickerAction(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        
+        mainLabel.text = dateFormatter.string(from: datePicker.date)
+        
+    }
+    
+    
+    @IBAction func toggleElements(_ sender: Any) {
+        segmentedControll.isHidden = !mainSwitch.isOn
+        mainLabel.isHidden = !mainSwitch.isOn
+        slider.isHidden = !mainSwitch.isOn
+        textField.isHidden = !mainSwitch.isOn
+        mainButton.isHidden = !mainSwitch.isOn
+        datePicker.isHidden = !mainSwitch.isOn
+        
+    }
+    
+    
+    
+    
+    }
+    
+    
+
 
